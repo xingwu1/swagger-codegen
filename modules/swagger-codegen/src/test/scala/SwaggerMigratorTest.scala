@@ -1,12 +1,7 @@
-import com.wordnik.swagger.models._
 import io.swagger.parser._
-
 import org.junit.runner.RunWith
+import org.scalatest.{FlatSpec, Matchers}
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.FlatSpec
-import org.scalatest.Matchers
-
-import scala.collection.JavaConverters._
 
 @RunWith(classOf[JUnitRunner])
 class SwaggerMigratorTest extends FlatSpec with Matchers {
@@ -14,6 +9,6 @@ class SwaggerMigratorTest extends FlatSpec with Matchers {
 
   it should "read a 1.2 spec" in {
     val loader = new SwaggerParser()
-    loader.read("src/test/resources/1_2/petstore-1.2/api-docs")
+    val swagger = loader.read("src/test/resources/1_2/petstore-1.2/api-docs")
   }
 }
